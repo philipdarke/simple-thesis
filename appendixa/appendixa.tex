@@ -1,0 +1,70 @@
+\thesischapter{Packages used}
+
+\begin{longtable}{l >{\ttfamily}l l}
+    % Headers
+    \toprule
+    \multicolumn{2}{l}{\textnormal{Package}} & Used to\dots\\
+    \midrule
+    \endfirsthead
+    \multicolumn{3}{r}{\small\textit{\dots continued from previous page}}\\
+    \midrule
+    \endhead
+    % Footers
+    \midrule
+    \multicolumn{3}{r}{\small\textit{continued on next page\dots}}
+    \endfoot
+    \endlastfoot
+    % Table content
+    \multicolumn{3}{l}{\textit{Typesetting}}\\
+    & anyfontsize & Set font sizes e.g. 14pt headings\\
+    & emptypage & Empty pages when printing two-sided\\
+    & enumitem & Customise enumerate and itemize environments\\
+    & fancyhdr & Customise headers and footers\\
+    & geometry & Set page margins\\
+    & microtype & Improve typesetting\\
+    & pdflscape & Rotate landscape pages in PDF\\
+    & setspace & Change line spacing\\
+    & siunitx & Format numbers and units\\
+    & titlecaps & Typeset chapter and section headings in Title Case\\
+    & titlesec & Customise headings\\
+    & tocbibind & Include bibliography etc in table of contents\\
+    & xcolor & Set colours\\
+    \multicolumn{3}{l}{\textit{Referencing}}\\
+    & biblatex & Reference sources\\
+    & cleveref & Format cross-references\\
+    & glossaries & Create acronyms and abbreviations section\\
+    & hyperref & Create hyperlinks\\
+    & hypcap & Ensure hyperlinks point to top of tables/figures\\
+    & makeidx & Create index\\
+    \multicolumn{3}{l}{\textit{Tables and figures}}\\
+    & array & Format table cells\\
+    & booktabs & Format tables\\
+    & caption & Customise captions\\
+    & float & Place table/figures with \texttt{H}\\
+    & graphicx  & Include figures\\
+    & longtable & Span long tables over pages\\
+    & multirow & Format multi-row cells in tables\\
+    & rotating & Add landscape tables and figures\\
+    & subcaption & Add sub-captions to figures\\
+    & tabularx & Control table widths\\
+    & threeparttable & Add table footnotes\\
+    \multicolumn{3}{l}{\textit{Mathematics}}\\
+    & amsmath & Typeset equations\\
+    & amssymb & Typeset equations\\
+    & amsthm & Typeset theorems/lemmas etc\\
+    \multicolumn{3}{l}{\textit{Draft package option}}\\
+    & datetime2 & Add date/time in footer\\
+    & draftwatermark & Add draft watermark\\
+    & lineno & Add line numbers\\
+    & todonotes & Add to-do notes\\
+    \multicolumn{3}{l}{\textit{Other packages}}\\
+    & etoolbox & Environment hooks etc\\
+    & ifdraft & Control logic in class file\\
+    & ifthen & Control logic in class file\\
+    & verbatim & Include the word count file\\
+    \bottomrule
+    \normalcaptions
+    \caption{Packages loaded by \texttt{simple-thesis} in a \texttt{longtable} environment
+    spanning two pages.}
+    \label{tbl:packages}
+\end{longtable}

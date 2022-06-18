@@ -1,0 +1,55 @@
+\documentclass{simple-thesis}
+
+% UPDATE: Add .bib files with references here
+\addbibresource{refs.bib}
+
+% UPDATE: PhD details
+\title{\texttt{simple-thesis}: a \LaTeX\ class for PhD theses}
+\author{Philip Darke}
+\department{School of Computing}
+\university{Newcastle University}
+\degree{Doctor of Philosophy}
+\date{Month Year}  % of submission
+\dedication{Dedication goes here}  % remove or replace with a short dedication
+
+% Preliminary pages
+\begin{document}
+\normalcaptions
+\maketitle
+\makededication
+\maketodolist
+\makewordcount
+\frontmatter
+\makeabstract{abstract/abstract}
+\input{acknowledgements/acknowledgements}
+\microtypesetup{protrusion=false}
+\tableofcontents
+\listoffigures
+\listoftables
+\microtypesetup{protrusion=true}
+\mainmatter
+
+% UPDATE: Main content
+\input{introduction/introduction}
+\input{chapter1/chapter1}
+\input{conclusion/conclusion}
+
+% Set up appendices
+\appendix
+\renewcommand{\chaptername}{Appendix}
+
+% UPDATE: Appendices
+\input{appendixa/appendixa}
+
+% Bibliography
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography[title=Bibliography]
+
+% Acronyms
+\printglossary[type=\acronymtype,title={Acronyms and abbreviations}]
+
+% Index
+\cleardoublepage
+\printindex
+
+\end{document}
