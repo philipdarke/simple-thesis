@@ -13,7 +13,7 @@ Features:
 
 ## Instructions
 
-1. Download the `simple-thesis.zip` template from [Releases](https://github.com/philipdarke/simple-thesis/releases/).
+1. Download the `simple-thesis.zip` template from [Releases](https://github.com/philipdarke/simple-thesis/releases/latest).
 2. Update the [package options](#package-package-options) and *PhD details* section of `thesis.tex`.
 3. Start writing! Keep each chapter in a directory named `chapterX` (do the same for any appendices). Figures and images should go in `figures` or `images` sub-directories.
 4. Add each chapter and appendix to `thesis.tex` using `\input{}` commands.
