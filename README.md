@@ -9,7 +9,7 @@ Features:
 * PDF mode to format for on-screen reading, see [example](thesis_pdf.pdf).
 * The thesis builds automatically when you push to GitHub.
 
-:information_source: The class complies with the August 2019 Newcastle University thesis [requirements](https://www.ncl.ac.uk/media/wwwnclacuk/studentprogress/files/pgr/202122/Guideline%20for%20Submission%20and%20Format%20of%20Theses%20August%202021.pdf) as set out [below](#formatting).
+:information_source: The class complies with the August 2019 Newcastle University thesis [requirements](https://www.ncl.ac.uk/media/wwwnclacuk/studentprogress/files/pgr/202122/Guideline%20for%20Submission%20and%20Format%20of%20Theses%20August%202021.pdf) as set out [below](#formatting). Another option for Newcastle University theses is the [NUTT](https://github.com/AndreGuerra123/NUTT) template (based on the popular [CUED](https://github.com/kks32/phd-thesis-template) template). This has extra formatting options but, in my view, doesn't look as good.
 
 ## Instructions
 
@@ -102,9 +102,11 @@ All formatting can be updated in `simple-thesis.cls`.
 ### Headings
 
 * Chapters begin on a new page.
-* Chapter headings are 14pt bold in Title Case and center-aligned.
-* Section headings are 12pt bold in Title Case and left-aligned.
+* Chapter headings are 14pt bold in Title Case* and center-aligned.
+* Section headings are 12pt bold in Title Case* and left-aligned.
 * Sub-section headings are 12pt italic bold and left-aligned.
+
+\* `\thesischapter` and `\thesissection` commands must be used to convert titles to Title Case
 
 ### Figures and tables
 
@@ -117,5 +119,5 @@ All formatting can be updated in `simple-thesis.cls`.
 
 ## License
 
-Made available under the MIT License.
+Made available under the [MIT License](LICENSE).
 
