@@ -1,8 +1,10 @@
 on: [push]
 jobs:
-  build_latex:
+  create-pdf:
     runs-on: ubuntu-latest
     steps:
+      - name: Set timestamp environment variable
+        run: echo "timestamp=$(date +'%Y-%m-%d-%H%M%S')" >> $GITHUB_ENV
       - uses: actions/checkout@v2
       - uses: xu-cheng/texlive-action/full@v1
         with:
@@ -12,10 +14,10 @@ jobs:
       - name: 'Get PDF'
         uses: actions/upload-artifact@v3
         with:
-          name: thesis
+          name: thesis-${{ env.timestamp }}
           path: thesis.pdf
       - name: 'Get word count'
         uses: actions/upload-artifact@v3
         with:
-          name: thesis
+          name: thesis-${{ env.timestamp }}
           path: wordcount.txt

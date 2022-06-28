@@ -53,7 +53,7 @@ Recommended!
 
 1. Create an empty repository on GitHub for your thesis.
 2. Set up Git, commit the template thesis and push to GitHub.
-3. Make regular commits to back up your work. **The PDF will build each time you push to GitHub. Go to Actions, choose the most recent commit and click `thesis` under Artifacts to download the PDF.**
+3. Make regular commits to back up your work. **The PDF will build each time you push to GitHub. Go to Actions, choose the most recent commit and click `thesis-[TIMESTAMP]` under Artifacts to download the PDF.**
 
 ### :computer: Building the PDF locally
 
