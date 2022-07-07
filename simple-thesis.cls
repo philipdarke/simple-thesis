@@ -68,6 +68,7 @@
 ]{hyperref}
 
 \RequirePackage[all]{hypcap}  % ensure table/figure hyperlinks point to correct location
+\RequirePackage{url}  % website links
 
 % Acronyms and abbreviations -----------------------------------------------------------
 
@@ -365,7 +366,7 @@
             \item Only the main thesis chapters contribute to the word count. Check that the
                   correct chapters are included above.
             \item Main content and words in captions/footnotes are counted.\footnote{Using
-                  \texttt{texcount} with the argument \texttt{-sum=1,0,1}.}
+                  \texttt{texcount} with the argument \texttt{-sum=1,0,1}. Note that the \texttt{thesischapter}, \texttt{thesissection} and \texttt{thesissubsection} commands contribute to the word count (if this is important you probably have bigger problems).}
             \item Full word count output is saved to \texttt{wordcount.txt}.
             \item Consider the word count approximate.
         \end{itemize}
