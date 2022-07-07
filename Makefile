@@ -15,8 +15,8 @@ clean:
 
 purge:
 	latexmk -C
-	rm wordcount.*
-	rm *.bbl
-	rm *.glsdefs
-	rm *.xml
-	rm *.tdo
+	rm -f wordcount.*
+	rm -f *.bbl
+	rm -f *.glsdefs
+	rm -f *.xml
+	rm -f *.tdo
