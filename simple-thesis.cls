@@ -116,9 +116,39 @@
 % Images/figures
 \setkeys{Gin}{draft=false}  % show images when using draft package option
 \RequirePackage{graphicx}
-\graphicspath{
-    {images/}   % LaTeX will look in the 'images/' and
-    {figures/}  % 'figures/' directory when building the PDF
+\graphicspath{  % LaTeX will look in the 'images/' and 'figures/' directories when building the PDF
+    {images/}
+    {figures/}
+    {introduction/images/}
+    {introduction/figures/}
+    {chapter1/images/}
+    {chapter1/figures/}
+    {chapter2/images/}
+    {chapter2/figures/}
+    {chapter3/images/}
+    {chapter3/figures/}
+    {chapter4/images/}
+    {chapter4/figures/}
+    {chapter5/images/}
+    {chapter5/figures/}
+    {chapter6/images/}
+    {chapter6/figures/}
+    {chapter7/images/}
+    {chapter7/figures/}
+    {chapter8/images/}
+    {chapter8/figures/}
+    {conclusion/images/}
+    {conclusion/figures/}
+    {appendixa/images/}
+    {appendixa/figures/}
+    {appendixb/images/}
+    {appendixb/figures/}
+    {appendixc/images/}
+    {appendixc/figures/}
+    {appendixd/images/}
+    {appendixd/figures/}
+    {appendixe/images/}
+    {appendixe/figures/}
 }
 \RequirePackage{xcolor}
 
