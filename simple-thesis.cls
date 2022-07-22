@@ -167,7 +167,7 @@
 % Set-up
 \RequirePackage[
     obeyDraft,  % only show notes in draft thesis
-    textsize=scriptsize,  % set small font size for notes
+    textsize=tiny,  % set small font size for notes
     colorinlistoftodos,  % show colour labels on the to-do list (see below)
 ]{todonotes}
 \reversemarginpar  % place notes on inner margin if two-sided
@@ -227,6 +227,7 @@
 \RequirePackage{emptypage}  % remove all content from empty pages if two-sided
 \RequirePackage{tocbibind}  % add list of figures etc to table of contents
 \RequirePackage{pdflscape} % to rotate landscape PDF pages
+\RequirePackage{soul} % to highlight text
 % \RequirePackage{cfr-lm}  % uncomment to apply old style numerals to full document
 
 % Newcastle thesis format --------------------------------------------------------------
