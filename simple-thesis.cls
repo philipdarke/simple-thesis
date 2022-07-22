@@ -340,7 +340,12 @@
 % Title page
 \renewcommand{\maketitle}{
     \begin{titlepage}
-        \newgeometry{top=50mm,bottom=40mm,left=30mm,right=20mm}  % custom margins for page
+        % Custom margins for page
+        \ifboolexpr{togl{pdf}}{
+            \newgeometry{top=50mm,bottom=40mm,left=25mm,right=25mm}
+        }{
+            \newgeometry{top=50mm,bottom=40mm,left=30mm,right=20mm}
+        }
         \setstretch{2.25}
         \begin{center}
             % Title
@@ -489,3 +494,17 @@
         \newpage
         \if@twocolumn\hbox{}\newpage\fi\fi\fi}
 }{}
+
+% 'pdf' package options ----------------------------------------------------------------
+
+% Remove binding offset but maintain same page size
+\ifboolexpr{togl{pdf}}{
+    \geometry{
+        left=25mm,
+        right=25mm,
+        top=20mm,
+        bottom=20mm,
+        bindingoffset=0mm,
+    }
+}{}
+
