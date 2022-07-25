@@ -116,6 +116,8 @@ acs-*.bib
 *.glsdefs
 *.lzo
 *.lzs
+*.not
+*.ntn
 *.slg
 *.slo
 *.sls

@@ -18,5 +18,8 @@ purge:
 	rm -f wordcount.*
 	rm -f *.bbl
 	rm -f *.glsdefs
-	rm -f *.xml
+	rm -f *.nlg
+	rm -f *.not
+	rm -f *.ntn
 	rm -f *.tdo
+	rm -f *.xml

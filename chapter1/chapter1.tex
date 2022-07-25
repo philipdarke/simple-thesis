@@ -18,7 +18,7 @@ Update \texttt{thesis.tex} where highlighted and build the PDF to create the the
   \item[\texttt{pdf}] You may wish to also disseminate your thesis as a PDF. Use the \texttt{pdf}
   option to format the thesis for reading on screen.\footnote{Hyperlinks are shown in blue,
   pages with landscape tables/figures are rotated and blank pages inserted in two-sided
-  theses are marked ``This page is intentionally blank''.}
+  theses are marked ``This page is intentionally blank''. The binding edge margin is removed.}
   \end{description}
 
 \thesissection{Thesis formatting}
@@ -153,7 +153,7 @@ This can be updated in \texttt{simple-thesis.cls}, see the ``Bibliography'' sect
   \vspace{51mm}\hspace{0pt}
 \end{sidewaystable}
 
-\thesissubsection{Acronyms and abbreviations}\index{Formatting!acronyms}
+\thesissubsection{Notation, Acronyms and abbreviations}\index{Formatting!acronyms}\index{Formatting!notation}
 
 \newacronym{nn}{NN}{neural network}
 
@@ -166,6 +166,15 @@ The acronym is inserted using \verb|\gls{tag}|. The first instance of \verb|\gls
 as ``\gls{nn}''. Subsequent uses are abbreviated with a hyperlink to the glossary e.g. ``\gls{nn}''.
 \verb|\Gls{tag}| capitalises the initial letter of the abbreviation, and \verb|\Glspl{tag}|
 and \verb|\glspl{tag}| use the plural form.
+
+The notation section is populated by adding definitions to \texttt{notation/notation.tex}. The \texttt{name} is required for sorting but the \texttt{symbol} and \texttt{description} are displayed, e.g.:
+\begin{verbatim}
+  \newglossaryentry{n}{
+    name={N},
+    description={Set of natural numbers \{0, 1, 2, \dots\}},
+    symbol={\ensuremath{\mathbb{N}}}
+  }
+\end{verbatim}
 
 \thesissubsection{Index}
 
@@ -198,7 +207,6 @@ package can also typeset units.
 
 Replace \texttt{logo.png} in the \texttt{./images/} directory to update the title page logo.
 
-\newpage
 \thesissection{To-do notes}\label{sec:todonotes}
 
 To-do notes are provided by \href{https://ctan.org/pkg/todonotes}{\texttt{todonotes}}. Use:
@@ -237,7 +245,7 @@ Visual Studio Code or TeXStudio:
     \texttt{\small texcount abstract/* *.tex -sum=1,0,1 -inc -out=wordcount.txt\\
     texcount abstract/* -sum=1,0,1 -1 -out=wordcount.abstract\\
     texcount introduction/* chapter*/* conclusion/* -sum=1,0,1 -brief -out=wordcount.summary\\
-    texcount introduction/* chapter*/* conclusion/* -sum=1,0,1 -1 -out=wordcount.total}
+    texcount introduction/* chapter*/* conclusion/* -sum=1,0,1 -1 -out=wordcount.total}\\
   \item To generate the bibliography, acronyms and index sections run:\vspace{1ex}\\
     \texttt{\small pdflatex thesis.tex\\
     biber thesis\\

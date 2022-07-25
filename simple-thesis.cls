@@ -80,6 +80,8 @@
     nonumberlist,  % do not include hyperlinks to text
     style=super,  % format acronyms page
 ]{glossaries}
+\newglossary[nlg]{notation}{not}{ntn}{Notation}  % for notation
+\loadglsentries[notation]{notation/notation}  % load notation entries
 \makeglossaries
 \setlength{\glsdescwidth}{\textwidth}  % use full page width for acronym definitions
 
@@ -90,6 +92,14 @@
   {%
     \setkeys{glslink}{hyper=false}%
   }%
+}
+
+% Custom notation style (show symbol instead of name)
+\newglossarystyle{super-symbols}{%
+    \setglossarystyle{super}%
+    \renewcommand*{\glossentry}[2]{%
+        \glstarget{##1}{\glossentrysymbol{##1}} & \glossentrydesc{##1}\tabularnewline
+    }
 }
 
 % Bibliography -------------------------------------------------------------------------
