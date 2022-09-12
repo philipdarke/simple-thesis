@@ -9,7 +9,8 @@ Features:
 * PDF mode to format for on-screen reading, see [example](thesis_pdf.pdf).
 * The thesis builds automatically when you push to GitHub.
 
-:information_source: The class complies with the August 2019 Newcastle University thesis [requirements](https://www.ncl.ac.uk/media/wwwnclacuk/studentprogress/files/pgr/202122/Guideline%20for%20Submission%20and%20Format%20of%20Theses%20August%202021.pdf) as set out [below](#formatting). Another option for Newcastle University theses is the [NUTT](https://github.com/AndreGuerra123/NUTT) template (based on the popular [CUED](https://github.com/kks32/phd-thesis-template) template). This has extra formatting options but, in my view, doesn't look as good.
+:information_source: The class complies with the August 2019 Newcastle University thesis [requirements](https://www.ncl.ac.uk/media/wwwnclacuk/studentprogress/files/pgr/202122/Guideline%20for%20Submission%20and%20Format%20of%20Theses%20August%202021.pdf) as set out [below](#formatting). Another option for Newcastle University theses is the [NUTT](https://github.com/AndreGuerra123/NUTT) template (based on the popular [CUED](https://github.com/kks32/phd-thesis-template) template). This has extra formatting options but, in my view, doesn't look as good.[^1]
+[^1]: Largely due to the use of [Times New Roman](https://practicaltypography.com/times-new-roman-alternatives.html)
 
 ## Instructions
 
@@ -29,7 +30,7 @@ Option | Description
 ------ | -----
 `oneside` | Double-sided is the default. Use the `oneside` option for a single-sided thesis.
 `draft` | Use the `draft` option to add a word count, line numbers etc and enable to-do notes. Remove the draft option to create the final thesis for printing.
-`pdf` | You may wish to also disseminate your thesis as a PDF. Use the `pdf` option to format the thesis for reading on screen. Hyperlinks are shown in blue, pages with landscape tables/figures are rotated and blank pages inserted in two-sided theses are marked *This page is intentionally blank*.
+`pdf` | You may wish to also disseminate your thesis as a PDF. Use the `pdf` option to format the thesis for reading on screen. Hyperlinks are shown in blue, pages with landscape tables/figures are rotated and blank pages inserted in two-sided theses are marked *This page is intentionally blank*. Margins are equalised to remove the binding edge.
 
 ### :blue_book: Thesis formatting
 
@@ -57,7 +58,9 @@ Recommended!
 
 ### :computer: Building the PDF locally
 
-The `Makefile` has been tested on Ubuntu running TexLive. It uses `latexmk` to automate the build with the `pdflatex` engine and `biber` for references. If you are unable to use `make` or `latexmk`, or prefer to use a recipe in Visual Studio Code or TeXStudio, follow the instructions below.
+The `Makefile` has been tested on Ubuntu[^2] and MacOS[^3]. It uses `latexmk` to automate the build with the `pdflatex` engine and `biber` for references. If you are unable to use `make` or `latexmk`, or prefer to use a recipe in Visual Studio Code or TeXStudio, follow the instructions below.
+[^2]: Ubuntu 18.04, 20.04 and 22.04 with TexLive installed using `sudo apt install texlive-full`
+[^3]: MacOS Monterey 12.5.1 with MacTeX installed using `brew install --cask mactex-no-gui`
 
 Run the following to generate the word count files:
 
@@ -86,7 +89,8 @@ All formatting can be updated in `simple-thesis.cls`.
 ### Font
 
 * Body text is 12pt.
-* Captions and footnotes are smaller to distinguish them from body text. This is a departure from Newcastle University requirements which state "All text should be 12-point except for headings".
+* Captions and footnotes are smaller to distinguish them from body text[^4].
+[^4]: This is a departure from Newcastle University requirements which state "All text should be 12-point except for headings"
 
 ### Layout
 
@@ -102,11 +106,10 @@ All formatting can be updated in `simple-thesis.cls`.
 ### Headings
 
 * Chapters begin on a new page.
-* Chapter headings are 14pt bold in Title Case* and center-aligned.
-* Section headings are 12pt bold in Title Case* and left-aligned.
+* Chapter headings are 14pt bold in Title Case[^5] and center-aligned.
+* Section headings are 12pt bold in Title Case[^5] and left-aligned.
 * Sub-section headings are 12pt italic bold and left-aligned.
-
-\* `\thesischapter` and `\thesissection` commands must be used to convert titles to Title Case
+[^5]:`\thesischapter` and `\thesissection` commands must be used to convert titles to Title Case
 
 ### Figures and tables
 
@@ -120,4 +123,3 @@ All formatting can be updated in `simple-thesis.cls`.
 ## License
 
 Made available under the [MIT License](LICENSE).
-

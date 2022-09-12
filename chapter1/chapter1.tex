@@ -18,7 +18,8 @@ Update \texttt{thesis.tex} where highlighted and build the PDF to create the the
   \item[\texttt{pdf}] You may wish to also disseminate your thesis as a PDF. Use the \texttt{pdf}
   option to format the thesis for reading on screen.\footnote{Hyperlinks are shown in blue,
   pages with landscape tables/figures are rotated and blank pages inserted in two-sided
-  theses are marked ``This page is intentionally blank''. The binding edge margin is removed.}
+  theses are marked ``This page is intentionally blank''. Margins are equalised to remove the
+  binding edge.}
   \end{description}
 
 \thesissection{Thesis formatting}
@@ -234,9 +235,10 @@ under \texttt{Artifacts}.
 
 Type \texttt{make} in the thesis directory to build the PDF.\footnote{This uses \texttt{latexmk}
 to automate the build with the \texttt{pdflatex} engine, \texttt{biber} for references and
-the glossary/index configuration in \texttt{.latexmkrc}.} This has been tested on  Ubuntu
-18.04 with TexLive (installed using \texttt{sudo apt install texlive-full}). If the document
-fails to build, try \texttt{make purge} to delete all intermediate files.
+the glossary/index configuration in \texttt{.latexmkrc}.} This has been tested on
+Ubuntu/TexLive\footnote{Ubuntu 18.04, 20.04 and 22.04 with TexLive installed using \texttt{sudo apt install texlive-full}}
+and MacOS/MacTeX\footnote{MacOS Monterey 12.5.1 with MacTeX installed using \texttt{brew install --cask mactex-no-gui}}.
+If the document fails to build, try \texttt{make purge} to delete all intermediate files.
 
 If you are unable to use \texttt{make} or \texttt{latexmk}, or prefer to use a recipe in
 Visual Studio Code or TeXStudio:
