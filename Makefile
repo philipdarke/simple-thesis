@@ -24,13 +24,13 @@ wordcount.txt: $(TEXT_SOURCES)
 	texcount -sum=1,0,1 -inc $^ >$@
 
 wordcount.abstract: abstract/abstract.tex
-	texcount -sum=1,0,1 -1 -nc $^ >$@
+	texcount -sum=1,0,1 -1 -q $^ >$@
 
 wordcount.summary: $(TEXT_SOURCES)
-	texcount -sum=1,0,1 -brief -nc $^ >$@
+	texcount -sum=1,0,1 -brief -q $^ >$@
 
 wordcount.total: $(TEXT_SOURCES)
-	texcount -sum=1,0,1 -1 -nc $^ >$@
+	texcount -sum=1,0,1 -1 -q $^ >$@
 	
 clean:
 	latexmk -c
