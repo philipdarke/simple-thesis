@@ -1,6 +1,6 @@
-all: pdf clean
+all: thesis.pdf clean
 
-pdf:
+thesis.pdf:
 	texcount abstract/* *.tex -sum=1,0,1 -inc -out=wordcount.txt
 	texcount abstract/* -sum=1,0,1 -1 -out=wordcount.abstract
 	texcount introduction/* chapter*/* conclusion/* -sum=1,0,1 -brief -out=wordcount.summary
