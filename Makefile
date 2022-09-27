@@ -23,3 +23,5 @@ purge:
 	rm -f *.ntn
 	rm -f *.tdo
 	rm -f *.xml
+
+.PHONY: all clean purge
