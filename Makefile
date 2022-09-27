@@ -1,4 +1,4 @@
-all: thesis.pdf clean
+all: thesis.pdf
 
 thesis.pdf:
 	texcount abstract/* *.tex -sum=1,0,1 -inc -out=wordcount.txt
