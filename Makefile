@@ -9,19 +9,19 @@ thesis.pdf:
 	
 clean:
 	latexmk -c
-	rm wordcount.abstract
-	rm wordcount.summary
-	rm wordcount.total
+	rm -f wordcount.abstract \
+	      wordcount.summary  \
+	      wordcount.total
 
 purge:
 	latexmk -C
-	rm -f wordcount.*
-	rm -f *.bbl
-	rm -f *.glsdefs
-	rm -f *.nlg
-	rm -f *.not
-	rm -f *.ntn
-	rm -f *.tdo
-	rm -f *.xml
+	rm -f wordcount.* \
+	      *.bbl 	  \
+	      *.glsdefs   \
+	      *.nlg       \
+	      *.not       \
+	      *.ntn       \
+	      *.tdo       \
+	      *.xml
 
 .PHONY: all clean purge
