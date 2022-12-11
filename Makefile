@@ -2,16 +2,16 @@
 # (Note: abstract is handled separately)
 TEXT_SOURCES := \
 	./introduction/introduction.tex         \
-	./chapter1/chapter1.tex                 \
 	./conclusion/conclusion.tex             \
+	$(wildcard ./chapter*/chapter*.tex)     \
 
 # Other TeX files that should not contribute to word-counts.
 OTHER_SOURCES := \
 	./thesis.tex                            \
 	./abstract/abstract.tex                 \
 	./acknowledgements/acknowledgements.tex \
-	./appendixa/appendixa.tex               \
 	./notation/notation.tex                 \
+	$(wildcard ./appendix*/appendix*.tex)   \
 
 SOURCES := $(TEXT_SOURCES) $(OTHER_SOURCES)
 
