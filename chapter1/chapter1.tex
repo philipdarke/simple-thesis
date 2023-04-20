@@ -112,14 +112,16 @@ This can be updated in \texttt{simple-thesis.cls}, see the ``Bibliography'' sect
 
 \begin{sidewaysfigure}
   \centering
-  \includegraphics[width=0.6\textwidth]{example-image}
-  \caption{Example landscape figure. Newcastle University thesis guidelines state the
-  ``\textit{top of tables/figures printed sideways should align to the left of the page}''.
-  The \texttt{rotating} package aligns them centrally and a bug prevents changing this (easily).
-  If this is important to you, a workaround is to add \texttt{\textbackslash vspace\{Xmm\}\textbackslash hspace\{0pt\}}
-  below the caption. Adjust \texttt{X} to push the table/figure up to the correct position.}
+  \includegraphics[width=0.7\textwidth]{pagoda}
+  \caption{Example landscape figure (image by \href{https://pixabay.com/users/pen_ash-5526837/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7868621}{Penny}
+  from \href{https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7868621}{Pixabay}).
+  Newcastle University thesis guidelines state the ``\textit{top of tables/figures printed sideways
+  should align to the left of the page}''. The \texttt{rotating} package aligns them centrally and
+  a bug prevents changing this (easily). If this is important to you, a workaround is to add
+  \texttt{\textbackslash vspace\{Xmm\}\textbackslash hspace\{0pt\}} below the caption. Adjust
+  \texttt{X} to push the table/figure up to the correct position.}
   \label{fig:landscape}
-  \vspace{16mm}\hspace{0pt}
+  \vspace{7mm}\hspace{0pt}
 \end{sidewaysfigure}
 
 \begin{sidewaystable}
@@ -168,7 +170,9 @@ as ``\gls{nn}''. Subsequent uses are abbreviated with a hyperlink to the glossar
 \verb|\Gls{tag}| capitalises the initial letter of the abbreviation, and \verb|\Glspl{tag}|
 and \verb|\glspl{tag}| use the plural form.
 
-The notation section is populated by adding definitions to \texttt{notation/notation.tex}. The \texttt{name} is required for sorting but the \texttt{symbol} and \texttt{description} are displayed, e.g.:
+The notation section is populated by adding definitions to \texttt{notation/notation.tex}.
+The \texttt{name} is required for sorting but the \texttt{symbol} and \texttt{description}
+are displayed, e.g.:
 \begin{verbatim}
   \newglossaryentry{n}{
     name={N},
@@ -201,8 +205,8 @@ Enclose quotes between \verb|\begin{quote}[source]{author}| and \verb|\end{quote
 Note the difference between the two sets of numerals in the quote. Use \verb|\oldnum| for
 ``old style'' numerals (\oldnum{0123456789}). \verb|\num| formats ``lined'' numerals (0123456789)
 for example with separating commas (\verb|\num{1234567.890123}| = \num{1234567.890123}) or 
-scientific notation (\verb|\num{1.234e-5}| = \num{1.234e-5}). The \href{https://ctan.org/pkg/siunitx}{\texttt{siunitx}}
-package can also typeset units.
+scientific notation (\verb|\num{1.234e-5}| = \num{1.234e-5}). The
+\href{https://ctan.org/pkg/siunitx}{\texttt{siunitx}} package can also typeset units.
 
 \thesissubsection{University logo}\index{Formatting!title-page logo}
 
@@ -219,7 +223,8 @@ To-do notes are provided by \href{https://ctan.org/pkg/todonotes}{\texttt{todono
 \end{itemize}
 
 When the \texttt{draft} package option is used, to-do notes are summarised on the first
-page. All to-do notes are disabled when producing the final thesis. Text can also be \hl{highlighted} using \verb|\hl{}|. 
+page. All to-do notes are disabled when producing the final thesis. Text can also be 
+\hl{highlighted} using \verb|\hl{}|. 
 
 \thesissection{Building the PDF}\index{Building the PDF}
 
@@ -236,20 +241,26 @@ under \texttt{Artifacts}.
 Type \texttt{make} in the thesis directory to build the PDF.\footnote{This uses \texttt{latexmk}
 to automate the build with the \texttt{pdflatex} engine, \texttt{biber} for references and
 the glossary/index configuration in \texttt{.latexmkrc}.} This has been tested on
-Ubuntu/TexLive\footnote{Ubuntu 18.04, 20.04 and 22.04 with TexLive installed using \texttt{sudo apt install texlive-full}}
-and MacOS/MacTeX\footnote{MacOS Monterey 12.5.1 with MacTeX installed using \texttt{brew install --cask mactex-no-gui}}.
-If the document fails to build, try \texttt{make purge} to delete all intermediate files.
+Ubuntu with TexLive\footnote{Ubuntu 18.04, 20.04 and 22.04 with TexLive installed using
+\texttt{sudo apt install texlive-full}} and MacOS with MacTeX\footnote{MacOS Monterey 12.5.1
+with MacTeX installed using \texttt{brew install --cask mactex-no-gui}}. If the document
+fails to build, try \texttt{make purge} to delete all output and intermediate files\footnote{The
+\texttt{make clean} command removes intermediate files only.}.
+
+\texttt{make standalone} builds a standalone PDF for a single chapter. See the example
+stub file \texttt{chapter1/chapter1-standalone.tex} which should be placed in each
+chapter directory.
 
 If you are unable to use \texttt{make} or \texttt{latexmk}, or prefer to use a recipe in
 Visual Studio Code or TeXStudio:
 \begin{enumerate}
   \item To generate the word count files run:\vspace{1ex}\\
-    \texttt{\small texcount abstract/* *.tex -sum=1,0,1 -inc -out=wordcount.txt\\
+    \texttt{\footnotesize texcount abstract/* *.tex -sum=1,0,1 -inc -out=wordcount.txt\\
     texcount abstract/* -sum=1,0,1 -1 -out=wordcount.abstract\\
     texcount introduction/* chapter*/* conclusion/* -sum=1,0,1 -brief -out=wordcount.summary\\
     texcount introduction/* chapter*/* conclusion/* -sum=1,0,1 -1 -out=wordcount.total}\\
   \item To generate the bibliography, acronyms and index sections run:\vspace{1ex}\\
-    \texttt{\small pdflatex thesis.tex\\
+    \texttt{\footnotesize pdflatex thesis.tex\\
     biber thesis\\
     makeglossaries thesis\\
     makeindex thesis}

@@ -1,5 +1,6 @@
 ## Do not commit thesis, word count files or build
 thesis.pdf
+*-standalone.pdf
 wordcount.*
 *.zip
 
@@ -53,6 +54,7 @@ latex.out/
 # algorithms
 *.alg
 *.loa
+*.ist
 
 # achemso
 acs-*.bib
