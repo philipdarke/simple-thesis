@@ -64,13 +64,7 @@ clean: $(addprefix clean-,$(STANDALONE))
 
 purge: $(addprefix purge-,$(STANDALONE))
 	latexmk -C
-	rm -f wordcount.* \
-	      *.bbl 	  \
-	      *.glsdefs   \
-	      *.nlg       \
-	      *.not       \
-	      *.ntn       \
-	      *.tdo       \
-	      *.xml
+	rm -f wordcount.*
+	find . -regex ".*\.\(bbl\|glsdefs\|nlg\|not\|ntn\|tdo\|xml\)" -type f -delete
 
 .PHONY: all clean purge standalone
