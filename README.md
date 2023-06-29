@@ -22,7 +22,17 @@ Features:
 
 If you have issues building the PDF locally, try first running `make purge` or see [below](#computer-building-the-pdf-locally).
 
-Note that GitHub will also build the PDF for you when you push changes, see [below](#octocat-using-git).
+### :octocat: Using Git
+
+Recommended!
+
+1. Run `git init` in your thesis directory to set up Git.
+1. Commit your changes.
+1. Create an empty private repository on GitHub for your thesis.
+1. Follow the instructions to set up a remote and push your work to GitHub.
+1. Make and push regular commits to back up your work. **The PDF will build each time you push to GitHub. Go to Actions, choose the most recent commit and click `thesis-[TIMESTAMP]` under Artifacts to download the PDF.**
+
+## Using the template
 
 ### :package: Package options
 
@@ -45,16 +55,7 @@ To-do notes can be added using:
 * `\issue{}` to highlight a problem
 * `\misc{}` for a miscellaneous note
 
-When the `draft` package option is used, to-do notes are summarised on the first
-page, see [example thesis](thesis_draft.pdf). All to-do notes are disabled when producing the final thesis.
-
-### :octocat: Using Git
-
-Recommended!
-
-1. Create an empty repository on GitHub for your thesis.
-2. Set up Git, commit the template thesis and push to GitHub.
-3. Make regular commits to back up your work. **The PDF will build each time you push to GitHub. Go to Actions, choose the most recent commit and click `thesis-[TIMESTAMP]` under Artifacts to download the PDF.**
+When the `draft` package option is used, to-do notes are summarised on the first page, see [example thesis](thesis_draft.pdf). All to-do notes are disabled when producing the final thesis.
 
 ### :computer: Building the PDF locally
 
@@ -81,6 +82,10 @@ makeindex thesis
 ```
 
 To build the final thesis, you will need to run `pdflatex thesis.tex` at least another two times to add all the sections and update the table of contents.
+
+## Building standalone chapters
+
+To build a standalone chapter (for example to share with your supervisors) place a stub file `chapterX-standalone.tex` in the chapter directory. See `chapter1/chapter1-standalone.tex` for an example. Run `make standalone` to build a PDF for each stub file.
 
 ## Formatting
 
@@ -119,6 +124,21 @@ All formatting can be updated in `simple-thesis.cls`.
 
 * Current chapter and section are included in the header.
 * Page numbers are centered in the footer.
+
+## Advanced notes on GitHub
+
+It is not possible to directly clone a public GitHub repository to a private one. To use a private repository for your thesis whilst retaining the ability to pull future changes made to the template:
+
+1. Run `git clone --bare git@github.com:philipdarke/simple-thesis.git` to create a bare clone of the repository using SSH[^6].
+1. Create an empty private repository on GitHub for your thesis.
+1. Mirror push the cloned repository to your private repository using `git push --mirror git@github.com:user/new-repository.git`.
+1. Delete the cloned repository and clone your private repository. Use this to write your thesis.
+1. Add a remote to the public repository using `git remote add public git@github.com:philipdarke/simple-thesis.git`.
+[^6]: HTTPS also works.
+
+To pull any changes made to the template run `git fetch public main` and `git rebase public/main`. You will need to handle conflicts. To push changes to your private repository run `git push [origin remote]` as normal.
+
+:warning: I wouldn't recommend this approach unless you are confident it's right for you.
 
 ## License
 
