@@ -1,3 +1,6 @@
+## Mac users
+.DS_Store
+
 ## Do not commit thesis, word count files or build
 thesis.pdf
 *-standalone.pdf
