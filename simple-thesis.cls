@@ -311,8 +311,8 @@
 \AfterEndEnvironment{longtable}{\onehalfspacing}
 
 % Use small font for table notes
-\BeforeBeginEnvironment{threeparttable}{\small}
-\AfterEndEnvironment{threeparttable}{\normalsize}
+\BeforeBeginEnvironment{tablenotes}{\small}
+\AfterEndEnvironment{tablenotes}{\normalsize}
 
 % Restrict maximum width of table and figure captions
 \newcommand{\normalcaptions}{\captionsetup{width=0.85\linewidth}}
