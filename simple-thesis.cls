@@ -168,9 +168,15 @@
 
 % Mathematics --------------------------------------------------------------------------
 
+\RequirePackage{bm}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
+
+% Customise style of vectors, matrices and tensors here
+\newcommand{\vect}[1]{\bm{#1}}
+\newcommand{\matr}[1]{\bm{#1}}
+\newcommand{\tens}[1]{\bm{#1}}
 
 % To-do notes --------------------------------------------------------------------------
 
@@ -305,8 +311,8 @@
 \AfterEndEnvironment{longtable}{\onehalfspacing}
 
 % Use small font for table notes
-\BeforeBeginEnvironment{threeparttable}{\small}
-\AfterEndEnvironment{threeparttable}{\normalsize}
+\BeforeBeginEnvironment{tablenotes}{\small}
+\AfterEndEnvironment{tablenotes}{\normalsize}
 
 % Restrict maximum width of table and figure captions
 \newcommand{\normalcaptions}{\captionsetup{width=0.85\linewidth}}
