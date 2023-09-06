@@ -1,0 +1,19 @@
+name: Build LaTeX document
+on: [push]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install LaTeX packages
+      run: |
+        sudo apt-get -y update
+        sudo apt-get -y install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+
+    - name: Compile LaTeX document
+      run: |
+        pdflatex -interaction=nonstopmode thesis.tex
