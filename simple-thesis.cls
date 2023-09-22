@@ -105,7 +105,7 @@
 % Bibliography -------------------------------------------------------------------------
 
 \RequirePackage[
-    citestyle=ieee,  % see https://www.overleaf.com/learn/latex/Biblatex_citation_styles
+    citestyle=numeric-comp,  % see https://www.overleaf.com/learn/latex/Biblatex_citation_styles
     bibstyle=ieee,  % see https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles
     backend=biber,  % use biber engine
     sorting=nyt,  % sort references by author name, year then title, see https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex#Reference_guide for options

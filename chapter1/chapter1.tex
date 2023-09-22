@@ -109,10 +109,14 @@ information.
 
 \thesissubsection{Bibliography}
 
-Update \texttt{refs.bib} and use \verb|\cite{}| or \verb|\parencite{}| to insert a numbered
-reference e.g. \cite{lecun_deep_2015}. The authors' names can be included using \verb|\textcite{}|
-e.g. ``\textcite{lecun_deep_2015} state that \dots''. The default citation style is ``IEEE''.
-This can be updated in \texttt{simple-thesis.cls}, see the ``Bibliography'' section.
+The \texttt{biblatex}\footnote{See \url{https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex}.}
+bibliography management package is used. Update \texttt{refs.bib} and use \verb|\cite{}|
+or \verb|\parencite{}| to insert a numbered reference e.g. \cite{lecun_deep_2015}. Author
+names can be included using \verb|\textcite{}| e.g. ``\textcite{lecun_deep_2015} state that \dots''.
+The default citation style is \texttt{numeric-comp}\footnote{See \url{https://www.overleaf.com/learn/latex/Biblatex_citation_styles}.}
+which is similar to IEEE but compressed e.g. multiple authors show as ``\textit{et al.}''
+and multiple citations as [1, 2] or [1-3]. The bibliography style is \texttt{IEEE}\footnote{See \url{https://www.overleaf.com/learn/latex/Biblatex_bibliography_styles}.}.
+These can be updated in \texttt{simple-thesis.cls}, see the ``Bibliography'' section.
 
 \begin{sidewaysfigure}
   \centering
