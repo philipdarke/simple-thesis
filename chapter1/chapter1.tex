@@ -175,9 +175,10 @@ When introducing a new acronym/abbreviation, define it with \verb|\newacronym{ta
 definition should be lower case and singular.}, for example \verb|\newacronym{nn}{NN}{neural network}|.
 
 The acronym is inserted using \verb|\gls{tag}|. The first instance of \verb|\gls{nn}| shows
-as ``\gls{nn}''. Subsequent uses are abbreviated with a hyperlink to the glossary e.g. ``\gls{nn}''.
-\verb|\Gls{tag}| capitalises the initial letter of the abbreviation, and \verb|\Glspl{tag}|
-and \verb|\glspl{tag}| use the plural form.
+as ``\gls{nn}''. Subsequent uses are abbreviated with a hyperlink\footnote{To improve readability,
+glossary links are only highlighted in draft mode e.g. \textcolor{orange}{NN}.} to the glossary
+e.g. ``\gls{nn}''. \verb|\Gls{tag}| capitalises the initial letter of the abbreviation, 
+and \verb|\Glspl{tag}| and \verb|\glspl{tag}| use the plural form.
 
 The notation section is populated by adding definitions to \texttt{notation/notation.tex}.
 The \texttt{name} is required for sorting but the \texttt{symbol} and \texttt{description}

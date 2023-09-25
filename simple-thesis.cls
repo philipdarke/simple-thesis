@@ -485,6 +485,9 @@
         \rightlinenumbers*  % place numbers opposite to to-do notes if one-sided
     }{}
 
+    % Highlight glossary links
+    \renewcommand*{\glstextformat}[1]{\textcolor{orange}{#1}}
+
     % Update footer
     \RequirePackage[en-GB]{datetime2}
     \fancyfoot[L]{\texttt{Word count:~\input{wordcount.total}}}  % word count
