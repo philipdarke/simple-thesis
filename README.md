@@ -61,7 +61,7 @@ When the `draft` package option is used, to-do notes are summarised on the first
 
 The `Makefile` has been tested on Ubuntu[^2] and MacOS[^3]. It uses `latexmk` to automate the build with the `pdflatex` engine and `biber` for references. If you are unable to use `make` or `latexmk`, or prefer to use a recipe in Visual Studio Code or TeXStudio, follow the instructions below.
 [^2]: Ubuntu 18.04, 20.04 and 22.04 with TexLive installed using `sudo apt install texlive-full`
-[^3]: MacOS Monterey 12.5.1 with MacTeX installed using `brew install --cask mactex-no-gui`
+[^3]: MacOS 12 Monterey and 13 Ventura with MacTeX installed using `brew install --cask mactex-no-gui`
 
 Run the following to generate the word count files:
 
