@@ -181,6 +181,9 @@
 \newcommand{\matr}[1]{\mathbfit{#1}}
 \newcommand{\tens}[1]{\mathsfbfit #1}
 
+% Haskell double plus, see https://math.stackexchange.com/a/1154439
+\newcommand\mdoubleplus{\mathbin{+\mkern-10mu+}}
+
 % To-do notes --------------------------------------------------------------------------
 
 % Set-up
