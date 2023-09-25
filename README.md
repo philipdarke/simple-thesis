@@ -9,7 +9,7 @@ Features:
 * PDF mode to format for on-screen reading, see [example](thesis_pdf.pdf).
 * The thesis builds automatically when you push to GitHub.
 
-:information_source: The class complies with the August 2021 Newcastle University thesis [requirements](https://www.ncl.ac.uk/media/wwwnclacuk/studentprogress/files/pgr/202122/Guideline%20for%20Submission%20and%20Format%20of%20Theses%20August%202021.pdf) as set out [below](#formatting). Another option for Newcastle University theses is the [NUTT](https://github.com/AndreGuerra123/NUTT) template (based on the popular [CUED](https://github.com/kks32/phd-thesis-template) template). This has extra formatting options but, in my view, doesn't look as good.[^1]
+:information_source: The class complies with the May 2023 Newcastle University thesis [requirements](https://www.ncl.ac.uk/media/wwwnclacuk/studentprogress/files/pgr/202324/Guideline%20for%20Submission%20and%20Format%20of%20Theses%20May23.pdf) as set out [below](#formatting). Another option for Newcastle University theses is the [NUTT](https://github.com/AndreGuerra123/NUTT) template (based on the popular [CUED](https://github.com/kks32/phd-thesis-template) template). This has extra formatting options but, in my view, doesn't look as good.[^1]
 [^1]: Largely due to the use of [Times New Roman](https://practicaltypography.com/times-new-roman-alternatives.html)
 
 ## Instructions
