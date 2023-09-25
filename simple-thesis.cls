@@ -102,6 +102,9 @@
     }
 }
 
+% Do not colour glossary links
+\renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}}
+
 % Bibliography -------------------------------------------------------------------------
 
 \RequirePackage[
