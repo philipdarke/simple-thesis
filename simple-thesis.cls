@@ -168,15 +168,15 @@
 
 % Mathematics --------------------------------------------------------------------------
 
-\RequirePackage{bm}
+\usepackage{isomath}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 
 % Customise style of vectors, matrices and tensors here
-\newcommand{\vect}[1]{\bm{#1}}
-\newcommand{\matr}[1]{\bm{#1}}
-\newcommand{\tens}[1]{\bm{#1}}
+\newcommand{\vect}[1]{\mathbfit{#1}}
+\newcommand{\matr}[1]{\mathbfit{#1}}
+\newcommand{\tens}[1]{\mathsfbfit #1}
 
 % To-do notes --------------------------------------------------------------------------
 
