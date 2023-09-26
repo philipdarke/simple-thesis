@@ -114,6 +114,13 @@
     sorting=nyt,  % sort references by author name, year then title, see https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex#Reference_guide for options
 ]{biblatex}
 
+% Slightly increase gap between items for legibility
+\setlength\bibitemsep{2\itemsep}  
+
+% Right-align bibliography, notation and index
+\RequirePackage{ragged2e}
+\pretocmd{\printbibliography}{\RaggedRight}
+
 % Figures/tables -----------------------------------------------------------------------
 
 % Tables
