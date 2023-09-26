@@ -43,7 +43,11 @@
 
 % Bibliography
 \addcontentsline{toc}{chapter}{Bibliography}
-\printbibliography[title=Bibliography]
+\defbibheading{bibliography}[\bibname]{%
+    \chapter*{#1}%
+    \markboth{#1}{#1}%
+}
+\printbibliography
 
 % Notation
 \glsaddall[types={notation}]
