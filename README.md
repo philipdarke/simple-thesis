@@ -61,7 +61,7 @@ When the `draft` package option is used, to-do notes are summarised on the first
 
 The `Makefile` has been tested on Ubuntu[^2] and MacOS[^3]. It uses `latexmk` to automate the build with the `pdflatex` engine and `biber` for references. If you are unable to use `make` or `latexmk`, or prefer to use a recipe in Visual Studio Code or TeXStudio, follow the instructions below.
 [^2]: Ubuntu 18.04, 20.04 and 22.04 with TexLive installed using `sudo apt install texlive-full`
-[^3]: MacOS 12 Monterey and 13 Ventura with MacTeX installed using `brew install --cask mactex-no-gui`
+[^3]: MacOS 12 Monterey, 13 Ventura and 14 Sonoma with MacTeX installed using `brew install --cask mactex-no-gui`
 
 Run the following to generate the word count files:
 
@@ -83,7 +83,7 @@ makeindex thesis
 
 To build the final thesis, you will need to run `pdflatex thesis.tex` at least another two times to add all the sections and update the table of contents.
 
-## Building standalone chapters
+### Building standalone chapters
 
 To build a standalone chapter (for example to share with your supervisors) place a stub file `chapterX-standalone.tex` in the chapter directory. See `chapter1/chapter1-standalone.tex` for an example. Run `make standalone` to build a PDF for each stub file.
 
@@ -124,6 +124,12 @@ All formatting can be updated in `simple-thesis.cls`.
 
 * Current chapter and section are included in the header.
 * Page numbers are centered in the footer.
+
+## Known bugs :beetle:
+
+1. To-do notes only display correctly in double-sided mode i.e. without setting the `oneside` package option.
+1. PDF rotation (for example landscape pages when using the `sidewaysfigure` or `sidewaystable` environments) does not show correctly on Mac OS e.g. see the [PDF example](thesis_pdf.pdf) in Safari and Preview[^6]. The same PDF renders correctly on Ubuntu and Windows.
+[^6]:However the PDF renders correctly in the VS Code PDF viewer on Mac OS.
 
 ## Advanced notes on GitHub
 
