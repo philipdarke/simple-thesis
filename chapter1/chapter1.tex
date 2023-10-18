@@ -252,10 +252,11 @@ Type \texttt{make} in the thesis directory to build the PDF.\footnote{This uses 
 to automate the build with the \texttt{pdflatex} engine, \texttt{biber} for references and
 the glossary/index configuration in \texttt{.latexmkrc}.} This has been tested on
 Ubuntu with TexLive\footnote{Ubuntu 18.04, 20.04 and 22.04 with TexLive installed using
-\texttt{sudo apt install texlive-full}} and MacOS with MacTeX\footnote{MacOS Monterey 12.5.1
-with MacTeX installed using \texttt{brew install --cask mactex-no-gui}}. If the document
-fails to build, try \texttt{make purge} to delete all output and intermediate files\footnote{The
-\texttt{make clean} command removes intermediate files only.}.
+\texttt{sudo apt install texlive-full}. See \href{https://github.com/philipdarke/simple-thesis/issues/1\#issuecomment-1256169085}{\texttt{https://github.com/philipdarke/simple-thesis/issues/1\#issuecomment-1256169085}}
+if not using the full TexLive install.} and MacOS with MacTeX\footnote{MacOS 12 Monterey,
+13 Ventura and 14 Sonoma with MacTeX installed using \texttt{brew install --cask mactex-no-gui}}.
+If the document fails to build, try \texttt{make purge} to delete all output and intermediate
+files\footnote{The \texttt{make clean} command removes intermediate files only.}.
 
 \texttt{make standalone} builds a standalone PDF for a single chapter. See the example
 stub file \texttt{chapter1/chapter1-standalone.tex} which should be placed in each

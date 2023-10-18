@@ -182,6 +182,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
+\RequirePackage{mathtools}
 
 % Customise style of vectors, matrices and tensors here
 \newcommand{\vect}[1]{\mathbfit{#1}}
@@ -299,6 +300,9 @@
 \titleformat{\subsection}[block]{\bfseries\itshape}{\thesubsection}{7pt}{\bfseries}  % 12pt bold, italic sub-section headings
 
 % Other formatting ---------------------------------------------------------------------
+
+% Prevent footnotes from breaking over a page
+\interfootnotelinepenalty=10000
 
 % Set pagestyle for each thesis section                                                 
 \appto\frontmatter{\pagestyle{plain}}
