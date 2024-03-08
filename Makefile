@@ -25,17 +25,14 @@ STANDALONE := $(wildcard */*-standalone.tex)
 standalone: $(STANDALONE:.tex=.pdf)
 
 %-standalone.pdf: %.tex
-	# latexmk passes -auxdir= to pdflatex, which doesn't understand it,
-	# so we need to redefine -pdflatex= to pass --output-directory. (We
-	# still need -auxdir for latexmk)
-	latexmk -pdf -pdflatex="pdflatex --output-directory $(@D) %O %S" -auxdir="$(@D)" $(subst pdf,tex,$@)
+	latexmk -pdf -output-directory="$(@D)" $(subst pdf,tex,$@)
 
 # fake cleanup targets
 $(addprefix clean-,$(STANDALONE)):
-	latexmk -auxdir=$(subst clean-,,$(@D)) -c $(subst clean-,,$@)
+	latexmk -output-directory="$(subst clean-,,$(@D))" -c $(subst clean-,,$@)
 
 $(addprefix purge-,$(STANDALONE)):
-	latexmk -auxdir=$(subst purge-,,$(@D)) -C $(subst purge-,,$@)
+	latexmk -output-directory="$(subst purge-,,$(@D))" -C $(subst purge-,,$@)
 
 .PHONY: $(addprefix clean-,$(STANDALONE)) $(addprefix purge-,$(STANDALONE))
 
