@@ -20,24 +20,24 @@ all: thesis.pdf wordcount.txt $(STANDALONE)
 ##############################################################################
 # rules for building standalone chapters.
 
-STANDALONE := $(wildcard */*-standalone.tex)
-
-standalone: $(STANDALONE:.tex=.pdf)
+STANDALONE_SOURCES := $(wildcard */*-standalone.tex)
+STANDALONE         := $(STANDALONE_SOURCES:.tex=.pdf)
 
 %-standalone.pdf: %.tex
-	# latexmk passes -auxdir= to pdflatex, which doesn't understand it,
-	# so we need to redefine -pdflatex= to pass --output-directory. (We
-	# still need -auxdir for latexmk)
-	latexmk -pdf -pdflatex="pdflatex --output-directory $(@D) %O %S" -auxdir="$(@D)" $(subst pdf,tex,$@)
+	latexmk -pdf -output-directory="$(@D)" $(subst pdf,tex,$@)
 
 # fake cleanup targets
 $(addprefix clean-,$(STANDALONE)):
-	latexmk -auxdir=$(subst clean-,,$(@D)) -c $(subst clean-,,$@)
+	latexmk -output-directory="$(subst clean-,,$(@D))" -c $(subst clean-,,$@)
 
 $(addprefix purge-,$(STANDALONE)):
-	latexmk -auxdir=$(subst purge-,,$(@D)) -C $(subst purge-,,$@)
+	latexmk -output-directory="$(subst purge-,,$(@D))" -C $(subst purge-,,$@)
 
-.PHONY: $(addprefix clean-,$(STANDALONE)) $(addprefix purge-,$(STANDALONE))
+standalone:       $(STANDALONE)
+clean-standalone: $(addprefix clean-,$(STANDALONE))
+purge-standalone: $(addprefix purge-,$(STANDALONE))
+
+.PHONY: standalone clean-standalone purge-standalone
 
 ##############################################################################
 
@@ -56,15 +56,15 @@ wordcount.summary: $(TEXT_SOURCES)
 wordcount.total: $(TEXT_SOURCES)
 	texcount -sum=1,0,1 -1 -q $^ >$@
 	
-clean: $(addprefix clean-,$(STANDALONE))
+clean: clean-standalone
 	latexmk -c
 	rm -f wordcount.abstract \
 	      wordcount.summary  \
 	      wordcount.total
 
-purge: $(addprefix purge-,$(STANDALONE))
+purge: purge-standalone
 	latexmk -C
 	rm -f wordcount.*
 	find . -regex ".*\.\(bbl\|glsdefs\|nlg\|not\|ntn\|tdo\|xml\)" -type f -delete
 
-.PHONY: all clean purge standalone
+.PHONY: all clean purge
