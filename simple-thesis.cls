@@ -301,9 +301,6 @@
 
 % Other formatting ---------------------------------------------------------------------
 
-% Prevent footnotes from breaking over a page
-\interfootnotelinepenalty=10000
-
 % Set pagestyle for each thesis section                                                 
 \appto\frontmatter{\pagestyle{plain}}
 \appto\mainmatter{\pagestyle{fancy}}
@@ -367,6 +364,16 @@
     \singlespacing
     \oldquote}
     {\par\nobreak\hfill\textit\quoteauthor\endoldquote\addvspace{\bigskipamount}}
+
+% Shorter and lighter line above footnotes
+\renewcommand\footnoterule{%
+    \kern-3\p@
+    {\color{darkgray}\hrule\@width 40mm}
+    \kern2.6\p@
+}
+
+% Prevent footnotes from breaking over a page
+\interfootnotelinepenalty=10000
 
 % Preliminary pages --------------------------------------------------------------------
 
